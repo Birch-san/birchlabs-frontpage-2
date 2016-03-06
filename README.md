@@ -25,6 +25,23 @@ I am deferring CSS loading, using code from [Google PageSpeed](https://developer
 
 This enables me to present quickly a "minimum viable site" — styling can arrive slightly later. I don't mind the "Flash of Unstyled Content". _Yet._
 
-### CSS reset
+## Attribution
 
+### CSS reset
 I've always wanted an excuse to use Matthew Blode's [Marx CSS](https://github.com/mblode/marx) stylesheet. So here we go.
+
+### `Elevator.js`
+We use Tim Holman's [`Elevator.js`](https://github.com/tholman/elevator.js) for scrolling large webpages.
+
+#### Elevator sounds
+
+##### Bell
+[BenSound](http://www.bensound.com/)
+
+##### Music
+[Full Moon Samba](http://homepage3.nifty.com/shibayan/stal1301/)
+
+Arrange: _だ_
+
+Album: _TOHO BOSSA NOVA 2_
+Album Artist: _ShibayanRecords_
