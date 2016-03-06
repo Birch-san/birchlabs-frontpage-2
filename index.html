@@ -1,63 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Marx Template</title>
+		<title>Birchlabs.co.uk front page</title>
 
-  <!-- Marx CSS -->
-  <!-- <link rel="stylesheet" href="css/marx.min.css"> -->
+	</head>
 
-</head>
+	<body>
+		<script>
+			// Google PageSpeed non-blocking, post-initial-paint css loader https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery#example
+			// I shortened it for fun, and also added support for an array of stylesheets
+			(requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame || window.addEventListener.bind(null, 'load'))(function() {
+				["https://cdnjs.cloudflare.com/ajax/libs/marx/1.3.0/marx.min.css"].forEach(function(s) {
+					var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = s;
+					var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+				});
+			});
+		</script>
 
-<body>
-<script>
-// Google PageSpeed non-blocking, post-initial-paint css loader https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery#example
-// I shortened it for fun, and also added support for an array of stylesheets
-(requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame || window.addEventListener.bind(null, 'load'))(function() {
-  ["https://cdnjs.cloudflare.com/ajax/libs/marx/1.3.0/marx.min.css"].forEach(function(s) {
-    var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = s;
-    var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
-  });
-});
-</script>
-  <!-- -->
-  <!-- <link rel="stylesheet" href="https://cdn.rawgit.com/mblode/marx/master/css/marx.min.css"> -->
+		<!-- main is the container -->
+		<main>
+			<!-- Navigation -->
+			<nav>
+				<ul>
+					<li><a href="#"><b>First</b></a></li>
+					<li><a href="#">Second</a></li>
+					<li><a href="#">Third</a></li>
+					<li><a href="#">Fourth</a></li>
+				</ul>
+			</nav>
 
-  <!-- main is the container -->
-  <main>
-    <!-- Navigation -->
-    <nav>
-      <ul>
-        <li><a href="#"><b>First</b></a></li>
-        <li><a href="#">Second</a></li>
-        <li><a href="#">Third</a></li>
-        <li><a href="#">Fourth</a></li>
-      </ul>
-    </nav>
+			<section>
+				<h1>Birchlabs.co.uk</h1>
+				<p>Birchlabs presents the hobby projects of Alex and Jamie Birch.</p>
+				<p>Mostly these include the games that we built during our childhood. But other creative works can be found here also, such as: drawings, tech experiments and blog posts.</p>
+			</section>
 
-    <!-- article -->
-    <article>
-      <h1>Article</h1>
-    </article>
+			<section>
+				<h1>Works in Progress</h1>
+			</section>
 
-    <!-- aside -->
-    <aside>
-      <h1>Aside</h1>
-    </aside>
+			<!-- footer -->
+			<footer>
+				<p>&copy Alex Birch &amp; Jamie Birch 2016</p>
+				<p>Styling: <a href="https://github.com/mblode/marx">Matthew Blode's Marx CSS</a></p>
+			</footer>
+		</main>
 
-    <!-- section -->
-    <section>
-      <h1>Section</h1>
-    </section>
-
-    <!-- footer -->
-    <footer>
-      <p>&copy Matthew Blode 2015</p>
-    </footer>
-  </main>
-
-</body>
+	</body>
 </html>
