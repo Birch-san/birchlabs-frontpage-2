@@ -10,7 +10,6 @@ Intention is to optimize frontpage for search engines.
 This means:
 - no Flash on frontpage.
 - fast time-to-initial-paint
-  - deferred CSS loading
 - text and hyperlinks up the yin-yang
 
 This will also give mobile users the ability to find their way to any non-Flash content on the website.
@@ -21,9 +20,25 @@ For now I will be using [`Brackets.app`](http://brackets.io/) to edit the webpag
 
 ### Page-load
 
-I am deferring CSS loading, using code from [Google PageSpeed](https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery#example).
+I had some cheeky code from [Google PageSpeed](https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery#example) to defer CSS loading.
 
-This enables me to present quickly a "minimum viable site" — styling can arrive slightly later. I don't mind the "Flash of Unstyled Content". _Yet._
+I edited it to have less conditions, and to favor binding over assignment:
+
+```js
+(requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame || window.addEventListener.bind(null, 'load'))(function() {
+	["https://cdnjs.cloudflare.com/ajax/libs/marx/1.3.0/marx.min.css"].forEach(function(s) {
+		var l = document.createElement('link');
+		l.rel = 'stylesheet';
+		l.href = s;
+		var h = document.getElementsByTagName('head')[0];
+		h.parentNode.insertBefore(l, h);
+	});
+});
+```
+
+This enabled me to present quickly a "minimum viable site" — styling can arrive slightly later.
+
+Buuut, the "Flash of Unstyled Content" got to me, and I reasoned that it is an acceptable amount of CSS, and it's cacheable and comes from a CDN.
 
 ## Attribution
 
