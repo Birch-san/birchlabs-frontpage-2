@@ -39,8 +39,7 @@ We use Tim Holman's [`Elevator.js`](https://github.com/tholman/elevator.js) for 
 [BenSound](http://www.bensound.com/)
 
 ##### Music
-[Full Moon Samba](http://homepage3.nifty.com/shibayan/stal1301/)
-
+[Full Moon Samba](http://homepage3.nifty.com/shibayan/stal1301/)  
 Arrange: _だ_  
 Album: _TOHO BOSSA NOVA 2_  
 Album Artist: _ShibayanRecords_  
