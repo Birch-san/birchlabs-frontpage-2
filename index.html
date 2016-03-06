@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Marx Template</title>
+
+  <!-- Marx CSS -->
+  <!-- <link rel="stylesheet" href="css/marx.min.css"> -->
+
+</head>
+
+<body>
+<script>
+// Google PageSpeed non-blocking, post-initial-paint css loader https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery#example
+// I shortened it for fun, and also added support for an array of stylesheets
+(requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame || window.addEventListener.bind(null, 'load'))(function() {
+  ["https://cdn.rawgit.com/mblode/marx/master/css/marx.min.css"].forEach(function(s) {
+    var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = s;
+    var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+  });
+});
+</script>
+  <!-- -->
+  <!-- <link rel="stylesheet" href="https://cdn.rawgit.com/mblode/marx/master/css/marx.min.css"> -->
+
+  <!-- main is the container -->
+  <main>
+    <!-- Navigation -->
+    <nav>
+      <ul>
+        <li><a href="#"><b>First</b></a></li>
+        <li><a href="#">Second</a></li>
+        <li><a href="#">Third</a></li>
+        <li><a href="#">Fourth</a></li>
+      </ul>
+    </nav>
+
+    <!-- article -->
+    <article>
+      <h1>Article</h1>
+    </article>
+
+    <!-- aside -->
+    <aside>
+      <h1>Aside</h1>
+    </aside>
+
+    <!-- section -->
+    <section>
+      <h1>Section</h1>
+    </section>
+
+    <!-- footer -->
+    <footer>
+      <p>&copy Matthew Blode 2015</p>
+    </footer>
+  </main>
+
+</body>
+</html>
