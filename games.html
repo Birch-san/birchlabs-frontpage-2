@@ -64,6 +64,7 @@
 				<h1>Games</h1>
 				<h2>Invasion</h2>
 				<h3><small>Invasion 1</small></h3>
+				
 				<aside>
 					<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="Games/Level20001.png" alt="Invasion 1">
 				</aside>
@@ -95,7 +96,10 @@
 				
 				<h3><small>Invasion 4</small></h3>
 				<aside>
-					<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="Games/Level20004.png" alt="Invasion 4">
+					<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="Games/Level20004.png" alt="Invasion 4" id="I4icon">
+					<script>
+						document.getElementById("I4icon").setAttribute("data-src", "Games/I4000"+Math.floor(1+Math.random()*9)+".png");
+					</script>
 				</aside>
 				<article>
 					<p>
