@@ -20,6 +20,8 @@ For now I will be using [`Brackets.app`](http://brackets.io/) to edit the webpag
 
 ### Page-load
 
+#### Deferred CSS
+
 I had some cheeky code from [Google PageSpeed](https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery#example) to defer CSS loading.
 
 I edited it to have less conditions, and to favor binding over assignment:
@@ -40,12 +42,24 @@ This enabled me to present quickly a "minimum viable site" — styling can arriv
 
 Buuut, the "Flash of Unstyled Content" got to me, and I reasoned that it is an acceptable amount of CSS, and it's cacheable and comes from a CDN.
 
-## Attribution
+#### Deferred Image loading
+
+Code from [Varvy](https://varvy.com/pagespeed/defer-images.html).
+
+We prevent images from having the power to prevent a page's becoming "loaded".
+
+We set the image `src` to a base64-encoded 1px image, so that the image can begin its life "already loaded" — without waiting for data.
+
+Once the page has finished its initial paint, we can begin fetching images.
+
+Also: we reserve in advance the dimensions of the image, so that there is no reflowing of content once the image arrives.
+
+## Further Attribution
 
 ### CSS reset
 I've always wanted an excuse to use Matthew Blode's [Marx CSS](https://github.com/mblode/marx) stylesheet. So here we go.
 
-### `Elevator.js`
+### Elevator
 We use Tim Holman's [`Elevator.js`](https://github.com/tholman/elevator.js) for scrolling large webpages.
 
 #### Elevator sounds
