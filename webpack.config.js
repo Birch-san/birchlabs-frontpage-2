@@ -13,25 +13,25 @@ module.exports = {
   devtool: isProd ? 'hidden-source-map' : 'cheap-eval-source-map',
   context: path.join(__dirname, './client'),
   entry: {
-    about: './about/index',
-    art: './art/index',
-    blog: './blog/index',
-    experiments: './experiments/index',
-    games: './games/index',
-    music: './music/index',
-    index: './index/index'
+    './about/index': './about/index',
+    './art/index': './art/index',
+    './blog/index': './blog/index',
+    './experiments/index': './experiments/index',
+    './games/index': './games/index',
+    './music/index': './music/index',
+    './index/index': './index/index'
   },
   output: {
     path: path.join(__dirname, "dist"),
-    filename: "[name].entry.js"
+    filename: "[name].entry.js",
+    chunkFilename: "[id].chunk.js"
   },
   devtool: 'source-map',
   // devtool: 'eval',
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: Infinity,
-      filename: 'vendor.bundle.js'
+      name: "commons",
+      filename: "commons.js"
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
