@@ -7,7 +7,7 @@ const isProd = nodeEnv === 'production';
 // const path = require('path');
 // const webpack = require('webpack');
 
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: isProd ? 'hidden-source-map' : 'cheap-eval-source-map',
@@ -29,6 +29,10 @@ module.exports = {
   devtool: 'source-map',
   // devtool: 'eval',
   plugins: [
+    new HtmlWebpackPlugin({
+      filename: 'games.html',
+      template: 'games/index.html'
+    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: "commons",
       filename: "commons.js"
@@ -66,13 +70,13 @@ module.exports = {
 
   module: {
     loaders: [
-      {
-        test: /\.html$/,
-        loader: 'file',
-        query: {
-          name: '[name].[ext]'
-        }
-      },
+      // {
+      //   test: /\.html$/,
+      //   loader: 'file',
+      //   query: {
+      //     name: '[name].[ext]'
+      //   }
+      // },
       {
         test: /\.css$/,
         loaders: [
