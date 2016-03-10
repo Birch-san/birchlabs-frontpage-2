@@ -42,10 +42,10 @@ module.exports = {
       template: 'games/index.html',
       inject: 'body'
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: "commons",
-      filename: "commons.js"
-    }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: "commons",
+    //   filename: "commons.js"
+    // }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       debug: false
