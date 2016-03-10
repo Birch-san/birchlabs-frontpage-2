@@ -2,6 +2,6 @@ var Elevator = require('./elevator.min');
 
 var elevator = new Elevator({
 	element: document.querySelector('.elevator'),
-	mainAudio: 'FullMoonSamba2.mp3',
-	endAudio: 'ding.mp3'
+	mainAudio: '../shared-assets/FullMoonSamba2.mp3',
+	endAudio: '../shared-assets/ding.mp3'
 });

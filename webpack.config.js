@@ -8,6 +8,7 @@ const isProd = nodeEnv === 'production';
 // const webpack = require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   devtool: isProd ? 'hidden-source-map' : 'cheap-eval-source-map',
@@ -31,15 +32,44 @@ module.exports = {
   devtool: 'source-map',
   // devtool: 'eval',
   plugins: [
+    new CopyWebpackPlugin([
+      {
+        from: 'lib/elevator/ding.mp3',
+        to: 'shared-assets/ding.mp3'
+      }
+    ]),
+    new CopyWebpackPlugin([
+      {
+        from: 'lib/elevator/FullMoonSamba2.mp3',
+        to: 'shared-assets/FullMoonSamba2.mp3'
+      }
+    ]),
+    new CopyWebpackPlugin([
+      {
+        from: 'experiments/img',
+        to: 'experiments/img'
+      }
+    ]),
+    new CopyWebpackPlugin([
+      {
+        from: 'games/img',
+        to: 'games/img'
+      }
+    ]),
     new HtmlWebpackPlugin({
       chunks: ['elevator', 'defer-images'],
-      filename: 'experiments.html',
+      filename: 'experiments/index.html',
       template: 'experiments/index.html'
     }),
     new HtmlWebpackPlugin({
       chunks: ['elevator', 'defer-images'],
-      filename: 'games.html',
+      filename: 'games/index.html',
       template: 'games/index.html',
+      inject: 'body'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'index/index.html',
       inject: 'body'
     }),
     // new webpack.optimize.CommonsChunkPlugin({

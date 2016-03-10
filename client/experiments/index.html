@@ -74,7 +74,7 @@
 			<h2>Rope Physics in JavaScript
 				<small>Engine</small></h2>
 			<aside>
-				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="Experiments/CirnoRope2.png" alt="Rope Physics">
+				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/CirnoRope2.png" alt="Rope Physics">
 			</aside>
 			<article>
 				<p>After watching Attack on Titan, and seeing the 3D fan-games that had been produced of it, I decided to see if I could make my own. I also felt it was a chance to make the jump to JavaScript and HTML5 after all my time in Flash, so consider this my first HTML5 work. I wanted to do real rope, so I recruited a physics engine. I used Box2D for this, and I found multiple versions had been made for JavaScript. Some looked machine-ported from C, others looked machine-ported from AS3, and only one distribution existed with full documentation, so I used this to start with. When I found out that it didn't support rope joints, I had to delve into the muddier machine-ported alternatives instead.</p>
@@ -92,7 +92,7 @@
 				<small>Fun with Geometry</small>
 			</h2>
 			<aside>
-				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="Experiments/SurfaceNormals.png" alt="Surface Normals">
+				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/SurfaceNormals.png" alt="Surface Normals">
 			</aside>
 			<article>
 				<p>
@@ -129,7 +129,7 @@
 				<small>In progress</small>
 			</h2>
 			<aside>
-				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="Experiments/Invasion5.png" alt="Invasion 5">
+				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/Invasion5.png" alt="Invasion 5">
 			</aside>
 			<article>
 				<p>
@@ -149,7 +149,7 @@
 				<small>Possible game</small>
 			</h2>
 			<aside>
-				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="Experiments/Tower.png" alt="Tower Defense">
+				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/Tower.png" alt="Tower Defense">
 			</aside>
 			<article>
 				<p>I was getting pretty sick of seeing slow Tower Defense games on the internet, which could take about a hundred units, tops, before they started to slow down. If you just put a bit more effort into it, you can make it literally about 100 times faster than that. This uses my most flexible (maybe even 'finished') sprite engine so far - on the dev side, it's almost exactly the same as working with movie clips. Supports having multiple animations (walk, run, shoot, die, etc), filters and rotation (these are all pre-rendered, since rotating bitmaps is slow and ugly). The end result is that it's a much more complicated game engine, but just as easy to use. And it _screams_. Hitting over 24 fps with about 7,000 animated, eased route-following units onscreen.</p>
@@ -181,7 +181,7 @@
 				<small>Finished experiment</small>
 			</h2>
 			<aside>
-				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="Experiments/Vectors.png" alt="Gravity Experiment">
+				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/Vectors.png" alt="Gravity Experiment">
 			</aside>
 			<article>
 				<p>A hugely important part of Orbit was the gravity engine. Using  complicated vector maths (at the time this was beyond what I'd encountered in school), I was able to make the man stay perpendicular to all vectors (a pseudo-gravitational effect). After this I developed a more 'real' interpretation of gravity (with inverse square pull from each node), enhancing it with the previous engine's ability to handle 'lines' of gravity rather than simple points.</p>
@@ -202,8 +202,8 @@
 				<p>The main problem I saw with Commando 3 (besides the appalling engine) was that the graphics were too intensive to allow any major battles to run well. So I turned to one of the (now old) versions of the Invasion 5 engine for a speed boost. However, it turned out that making a side-on RTS was a stupid, inflexible idea. Sprite work was far too fiddly, and bugs were impossible to catch, with the result being that I abandoned the project. Kortex did the artwork for this prototype, and I feel bad about these animations never seeing the light of day. If I do ever try to make a Commando 4 again, it'll be a top-down RTS for sure, probably with buildings, and it'd use the Invasion 5 sprite engine. If anyone's wondering why I've been so reluctant to embark on such a project, look at the spritesheet linked below... I made that by hand; no code involved. THAT is how many sprites need to be prepared for ONE unit in a top-down game (and of course I need to do it a second time for team two :P). It's not fun at all. And it only works with small units; a sprite sheet for the tank (actually note that I'd need TWO spritesheets - one for the turret, one for the base) would be too big to fit within Flash's 2880x2880 bitmap size limit. It could be spread between several bitmaps, but this is a real pain to do. I also had an explanation of the collision system used in Commando 4 (a derivation of the one used in Invasion 5) lying around, so I've attached that as well.</p>
 				<p>
 					<a href="Commando4.swf">Play</a><br>
-					<a href="InfTeam1.png">View spritesheet</a><br>
-					<a href="Commando4Collisions.png">View collision diagram </a>
+					<a img"InfTeam1.png">View spritesheet</a><br>
+					<a img"Commando4Collisions.png">View collision diagram </a>
 				</p>
 			</article>
 
@@ -212,7 +212,7 @@
 				<small>Proof-of-concept</small>
 			</h2>
 			<aside>
-				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="Experiments/CommandoX.png" alt="Commando X">
+				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/CommandoX.png" alt="Commando X">
 			</aside>
 			<article>
 				<p>Here's a little experiment that spews out infantry created from the aforementioned spritesheet. It was originally an attempt at making a Commando 4, but trying to keep the engine fast made it very hard to work on. By the way, it's only called Commando X because Commando 4 was already taken, and I didn't want to skip to Commando 5 because it'd be confusing if I ever released it.</p>
@@ -226,7 +226,7 @@
 				<small>Proof-of-concept</small>
 			</h2>
 			<aside>
-				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="Experiments/Polygon.png" alt="Polygon">
+				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/Polygon.png" alt="Polygon">
 			</aside>
 			<article>
 				<p>With the incredibly fast rendering and collision detection methods from Invasion 5, I decided to see if I could create a Geometry Wars clone (the problem with existing Flash Geometry Wars games is that they don't run fast enough to push around the number of sprites that the original game did). Turns out I could, I just couldn't be bothered to finish it. One good thing that came from this project was that I wrote a spritesheet generator, which might just solve the aforementioned sprite problems involved with making a fourth Commando game. Three versions here - one is of the neat eyecandy you get when you fade the battlefield bitmap every frame instead of clearing it, the next is an example of what the game would look like with the colour scheme I intended, and finally an example with a moving enemy and a modified colour scheme so that the cool ripple effect I wrote is visible.</p>
@@ -270,7 +270,7 @@
 				<small>Abandoned game</small>
 			</h2>
 			<aside>
-				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="Experiments/Scythe.png" alt="Scythe">
+				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/Scythe.png" alt="Scythe">
 			</aside>
 			<article>
 				<p>This takes me back. Scythe was a game that Kortex wanted to make, in the style of 'Soulmech Shinobu'. A to use slash-combo, S to eat fallen souls for magic, and D to throw fireballs. Arrow keys to move and jump. I think this game came out pretty well, but we left it at level 1 it due to lack of interest.</p>
@@ -284,7 +284,7 @@
 				<small>Abandoned game</small>
 			</h2>
 			<aside>
-				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="Experiments/WiiBox.png" alt="Wii Box">
+				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/WiiBox.png" alt="Wii Box">
 			</aside>
 			<article>
 				<p>The Box was starting to feel its age, so I decided to have a go at revamping it using the skills I've acquired since I made the last version. Changes included upping the framerate, making the shrink items work (hah!), fixing the enemy's rotation easing, redrawing the player as a square (never realised he was a rectangle), easing the player's movement, adding a sensible speed cap, fixing item spawning and mapping the controls to the WiiMote (that's right, it'll be compatible with the Wii if I ever put it on WiiCade). I actually left this only a few lines away from completed, but it's a simple enough game that I wasn't invested.</p>
