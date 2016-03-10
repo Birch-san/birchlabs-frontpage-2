@@ -58,13 +58,13 @@
 		<main>
 			<nav>
 				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="games.html">Games</a></li>
-					<li><a href="art.html">Art</a></li>
+					<li><a href="../index.html">Home</a></li>
+					<li><a href="../games/index.html">Games</a></li>
+					<li><a href="../art/index.html">Art</a></li>
 					<li><b>Experiments</b></li>
-					<li><a href="blog.html">Blog</a></li>
-					<li><a href="music.html">Music</a></li>
-					<li><a href="about.html">About</a></li>
+					<li><a href="../blog/index.html">Blog</a></li>
+					<li><a href="../music/index.html">Music</a></li>
+					<li><a href="../about/index.html">About</a></li>
 				</ul>
 			</nav>
 			<section>
@@ -108,7 +108,7 @@
 				<small>Proof-of-concept</small>
 			</h2>
 			<aside>
-				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="Experiments/Naruto Game.jpg" alt="Naruto Game">
+				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/Naruto Game.jpg" alt="Naruto Game">
 			</aside>
 			<article>
 				<p>
@@ -165,7 +165,7 @@
 				<small>Proof-of-concept, Abandoned game</small>
 			</h2>
 			<aside>
-				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="Experiments/Orbit.jpg" alt="Orbit">
+				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/Orbit.jpg" alt="Orbit">
 			</aside>
 			<article>
 				<p>This was a response to Nintendo's game, Super Mario Galaxy. I wanted to see if I could write a platform engine that was independent of orientation (that is to say, you could walk forward all the way around the surface of a planetoid, sticking to the surface the whole time). While my engine handled the gravity simulation perfectly, collision handling was another matter - the levels were to be bitmaps (actually photos I'd taken as part of my Art course - you can see them in this site's Gallery), so instead of using maths-based collision, it had to be an algorithm that was accurate to a fraction of a pixel. The engine had problems traversing certain types of terrain (believe me when I say I tried to fix this), and ultimately had to be abandoned for this reason. Oh, and the reason that the 'hero' character is the Saboteur from Invasion is because it was the first thing I found.</p>
@@ -196,7 +196,7 @@
 				<small>Abandoned game</small>
 			</h2>
 			<aside>
-				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="Experiments/Commando4.jpg" alt="Commando 4">
+				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/Commando4.jpg" alt="Commando 4">
 			</aside>
 			<article>
 				<p>The main problem I saw with Commando 3 (besides the appalling engine) was that the graphics were too intensive to allow any major battles to run well. So I turned to one of the (now old) versions of the Invasion 5 engine for a speed boost. However, it turned out that making a side-on RTS was a stupid, inflexible idea. Sprite work was far too fiddly, and bugs were impossible to catch, with the result being that I abandoned the project. Kortex did the artwork for this prototype, and I feel bad about these animations never seeing the light of day. If I do ever try to make a Commando 4 again, it'll be a top-down RTS for sure, probably with buildings, and it'd use the Invasion 5 sprite engine. If anyone's wondering why I've been so reluctant to embark on such a project, look at the spritesheet linked below... I made that by hand; no code involved. THAT is how many sprites need to be prepared for ONE unit in a top-down game (and of course I need to do it a second time for team two :P). It's not fun at all. And it only works with small units; a sprite sheet for the tank (actually note that I'd need TWO spritesheets - one for the turret, one for the base) would be too big to fit within Flash's 2880x2880 bitmap size limit. It could be spread between several bitmaps, but this is a real pain to do. I also had an explanation of the collision system used in Commando 4 (a derivation of the one used in Invasion 5) lying around, so I've attached that as well.</p>
@@ -242,7 +242,7 @@
 				<small>Finished experiment</small>
 			</h2>
 			<aside>
-				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="Experiments/Displacement.jpg" alt="DisplacementMapFilter">
+				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/Displacement.jpg" alt="DisplacementMapFilter">
 			</aside>
 			<article>
 				<p>
@@ -256,7 +256,7 @@
 			<small>Finished experiment</small>
 			</h2>
 			<aside>
-				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="Experiments/Mode7.jpg" alt="Mode7">
+				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/Mode7.jpg" alt="Mode7">
 			</aside>
 			<article>
 				<p>I set out trying to write a mode7 engine to allow me to use 3D worlds in my games. However, clear documentation was hard to come by, so instead, I opted for something even harder - a fully-fledged polygon-based 3D engine. After weeks of hard work (this was perhaps the most complicated coding I'd done at that point), I got a decent prototype going. I came to the sad conclusion that this engine was not fast enough to be used to display a 3D landscape (or rather, I had to make a compromise between speed and clarity - if I were to cut the picture into only two triangles, it'd run very fast, but the 3D transformation would be pretty unimpressive). Also would need to implement backface culling to make any meaningful 3D geometry. However, I'm very proud of what I accomplished. The image used in it is a Megatokyo strip.</p>
