@@ -10,6 +10,15 @@ const isProd = nodeEnv === 'production';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+const webpackMinifyOptions = {
+  collapseWhitespace: true,
+  conservativeCollapse: true,
+  removeTagWhitespace: true,
+  caseSensitive: true,
+  minifyCSS: true,
+  minifyJS: true
+}
+
 module.exports = {
   devtool: isProd ? 'hidden-source-map' : 'cheap-eval-source-map',
   context: path.join(__dirname, './client'),
@@ -59,38 +68,45 @@ module.exports = {
     new HtmlWebpackPlugin({
       chunks: ['elevator', 'defer-images'],
       filename: 'experiments/index.html',
-      template: 'experiments/index.html'
+      template: 'experiments/index.html',
+        minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
       chunks: ['elevator', 'defer-images'],
       filename: 'games/index.html',
       template: 'games/index.html',
-      inject: 'body'
+      inject: 'body',
+      minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
       filename: 'art/index.html',
       template: 'art/index.html',
-      inject: 'body'
+      inject: 'body',
+      minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
       filename: 'about/index.html',
       template: 'about/index.html',
-      inject: 'body'
+      inject: 'body',
+      minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
       filename: 'blog/index.html',
       template: 'blog/index.html',
-      inject: 'body'
+      inject: 'body',
+      minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
       filename: 'music/index.html',
       template: 'music/index.html',
-      inject: 'body'
+      inject: 'body',
+      minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index/index.html',
-      inject: 'body'
+      inject: 'body',
+      minify: webpackMinifyOptions
     }),
     // new webpack.optimize.CommonsChunkPlugin({
     //   name: "commons",
