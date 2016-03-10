@@ -146,7 +146,7 @@
 				<aside>
 					<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/Level20004.png" alt="Invasion 4" id="I4icon">
 					<script>
-						document.getElementById("I4icon").setAttribute("data-src", "Games/I4000"+Math.floor(1+Math.randomimg*9)+".png");
+						document.getElementById("I4icon").setAttribute("data-src", "img/I4000"+Math.floor(1+Math.randomimg*9)+".png");
 					</script>
 				</aside>
 				<article>
@@ -183,7 +183,7 @@
 				</aside>
 				<article>
 					<p>
-						<a href="experiments.html#Invasion5" title="Or maybe I'm not">Just kidding</a>
+						<a href="../experiments/index.html#Invasion5" title="Or maybe I'm not">Just kidding</a>
 					</p>
 				</article>
 				
@@ -412,17 +412,6 @@
 				</p>
 			</footer>
 		</main>
-		
-		<script>
-			// Google PageSpeed non-blocking, post-initial-paint css loader https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery#example
-			// I shortened it for fun, and also added support for an array of stylesheets
-			// (requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame || window.addEventListener.bind(null, 'load'))(function() {
-			// 	["https://cdnjs.cloudflare.com/ajax/libs/marx/1.3.0/marx.min.css"].forEach(function(s) {
-			// 		var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = s;
-			// 		var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
-			// 	});
-			// });
-		</script>
 
 	</body>
 </html>

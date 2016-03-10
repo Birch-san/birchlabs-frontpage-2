@@ -68,6 +68,26 @@ module.exports = {
       inject: 'body'
     }),
     new HtmlWebpackPlugin({
+      filename: 'art/index.html',
+      template: 'art/index.html',
+      inject: 'body'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'about/index.html',
+      template: 'about/index.html',
+      inject: 'body'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'blog/index.html',
+      template: 'blog/index.html',
+      inject: 'body'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'music/index.html',
+      template: 'music/index.html',
+      inject: 'body'
+    }),
+    new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index/index.html',
       inject: 'body'
