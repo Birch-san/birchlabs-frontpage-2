@@ -1,4 +1,4 @@
-var Elevator = require('elevator.min');
+var Elevator = require('./elevator.min');
 
 var elevator = new Elevator({
 	element: document.querySelector('.elevator'),
