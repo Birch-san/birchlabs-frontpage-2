@@ -13,13 +13,15 @@ module.exports = {
   devtool: isProd ? 'hidden-source-map' : 'cheap-eval-source-map',
   context: path.join(__dirname, './client'),
   entry: {
-    './about/index': './about/index',
-    './art/index': './art/index',
-    './blog/index': './blog/index',
-    './experiments/index': './experiments/index',
-    './games/index': './games/index',
-    './music/index': './music/index',
-    './index/index': './index/index'
+    // './about/index': './about/index',
+    // './art/index': './art/index',
+    // './blog/index': './blog/index',
+    // './experiments/index': './experiments/index',
+    // 'games': './games/index',
+    // './music/index': './music/index',
+    // './index/index': './index/index'
+    'elevator' : './lib/elevator/index',
+    'defer-images' : './lib/defer-images/index'
   },
   output: {
     path: path.join(__dirname, "dist"),
@@ -30,8 +32,15 @@ module.exports = {
   // devtool: 'eval',
   plugins: [
     new HtmlWebpackPlugin({
+      chunks: ['elevator', 'defer-images'],
+      filename: 'experiments.html',
+      template: 'experiments/index.html'
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ['elevator', 'defer-images'],
       filename: 'games.html',
-      template: 'games/index.html'
+      template: 'games/index.html',
+      inject: 'body'
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: "commons",
