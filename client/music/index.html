@@ -26,6 +26,33 @@
 			footer a {
 				color: #777;
 			}
+
+			/** Skiplink styling copied from http://webaim.org/ */
+			#skiptocontent a:focus {
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				background: #BF1722;
+				outline: 0;
+				-webkit-transition: top .1s ease-in, background .5s linear;
+				transition: top .1s ease-in, background .5s linear;
+				color:white;
+			}
+
+			#skiptocontent a {
+				padding: 6px;
+				position: absolute;
+				top: -40px;
+				left: 0px;
+				color: white;
+				border-right: 1px solid white;
+				border-bottom: 1px solid white;
+				border-bottom-right-radius: 8px;
+				background: transparent;
+				-webkit-transition: top 1s ease-out, background 1s linear;
+				transition: top 1s ease-out, background 1s linear;
+				z-index: 100;
+			}
 		</style>
 
 	</head>
@@ -33,6 +60,10 @@
 	<body>
 		<main>
 			<nav>
+				<div id="skiptocontent">
+					<!-- Skiplink copied from http://webaim.org/ -->
+					<a href="#maincontent">Skip to main content</a>
+				</div>
 				<ul>
 					<li><a href="../index.html">Home</a></li>
 					<li><a href="../games/index.html">Games</a></li>
@@ -44,7 +75,7 @@
 				</ul>
 			</nav>
 
-			<section>
+			<section id="maincontent">
 				<h1>Music</h1>
 				<h2><small>Anipiano</small></h2>
 				<p><a href="anipiano">Anipiano</a> is a micro-site within Birchlabs where I host piano transcriptions and covers of anime music.
