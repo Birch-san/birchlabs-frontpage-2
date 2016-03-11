@@ -1,0 +1,33 @@
+{
+  "name": "birchlabs-frontpage-2",
+  "version": "1.0.0",
+  "description": "Attempt 2 to provide a simple plaintext sitemap on the frontpage of Birchlabs.co.uk",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/.bin/webpack-dev-server --port 8083 --history-api-fallback --progress --hot --inline --module-bind \"css=style\\!css\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node build.js production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Birch-san/birchlabs-frontpage-2.git"
+  },
+  "author": "Alex Birch",
+  "license": "CC-BY-4.0",
+  "bugs": {
+    "url": "https://github.com/Birch-san/birchlabs-frontpage-2/issues"
+  },
+  "homepage": "https://github.com/Birch-san/birchlabs-frontpage-2#readme",
+  "devDependencies": {
+    "babel-core": "^6.7.0",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015-native-modules": "^6.6.0",
+    "copy-webpack-plugin": "^1.1.1",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "html-webpack-plugin": "^2.9.0",
+    "style-loader": "^0.13.0",
+    "webpack": "^2.1.0-beta.4",
+    "webpack-dev-server": "^2.0.0-beta"
+  }
+}
