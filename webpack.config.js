@@ -10,10 +10,10 @@ const isProd = nodeEnv === 'production';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+/** https://github.com/kangax/html-minifier#options-quick-reference */
 const webpackMinifyOptions = {
   collapseWhitespace: true,
   conservativeCollapse: true,
-  removeTagWhitespace: true,
   caseSensitive: true,
   minifyCSS: true,
   minifyJS: true
