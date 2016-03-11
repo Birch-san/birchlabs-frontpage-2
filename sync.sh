@@ -30,4 +30,8 @@ open '$FTPURL';
 lcd $LCD;
 cd $RCD;
 mirror --reverse \
+       --exclude-glob .DS_Store \
+       --exclude-glob shared-assets/*.mp3 \
+       --exclude-glob experiments/img/* \
+       --exclude-glob games/img/* \
        --verbose"
