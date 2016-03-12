@@ -20,8 +20,8 @@ const webpackMinifyOptions = {
 }
 
 module.exports = {
-  // devtool: isProd ? 'hidden-source-map' : 'cheap-eval-source-map',
-  devtool: isProd ? 'hidden-source-map' : 'source-map',
+  devtool: isProd ? 'hidden-source-map' : 'cheap-eval-source-map',
+  // devtool: isProd ? 'hidden-source-map' : 'source-map',
   context: path.join(__dirname, './client'),
   entry: {
     // './about/index': './about/index',
