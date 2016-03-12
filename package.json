@@ -29,5 +29,9 @@
     "style-loader": "^0.13.0",
     "webpack": "^2.1.0-beta.4",
     "webpack-dev-server": "^2.0.0-beta"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.2",
+    "jquery": "^2.2.1"
   }
 }

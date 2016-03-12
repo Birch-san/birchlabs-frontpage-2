@@ -30,7 +30,7 @@ module.exports = {
     // 'games': './games/index',
     // './music/index': './music/index',
     // './index/index': './index/index'
-    'elevator' : './lib/elevator/index',
+    'elevator-with-sidebar' : './lib/elevator-with-sidebar/index',
     'defer-images' : './lib/defer-images/index'
   },
   output: {
@@ -38,9 +38,14 @@ module.exports = {
     filename: "[name].entry.js",
     chunkFilename: "[id].chunk.js"
   },
-  devtool: 'source-map',
+  // devtool: 'source-map',
   // devtool: 'eval',
   plugins: [
+    new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery",
+        "window.jQuery": "jquery"
+    }),
     new CopyWebpackPlugin([
       {
         from: 'lib/elevator/ding.mp3',
@@ -66,13 +71,13 @@ module.exports = {
       }
     ]),
     new HtmlWebpackPlugin({
-      chunks: ['elevator', 'defer-images'],
+      chunks: ['defer-images', 'elevator-with-sidebar'],
       filename: 'experiments/index.html',
       template: 'experiments/index.html',
         minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
-      chunks: ['elevator', 'defer-images'],
+      chunks: ['defer-images', 'elevator-with-sidebar'],
       filename: 'games/index.html',
       template: 'games/index.html',
       inject: 'body',
@@ -131,7 +136,7 @@ module.exports = {
             }
         }
       },
-      sourceMap: false
+      sourceMap: !isProd
     }),
     // new webpack.optimize.DedupePlugin(),
     new webpack.DefinePlugin({
