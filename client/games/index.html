@@ -55,6 +55,10 @@
 				color: #777;
 			}
 
+			body {
+			  position: relative;
+			}
+
 			/** Skiplink styling copied from http://webaim.org/ */
 			#skiptocontent a:focus {
 				position: absolute;
@@ -81,11 +85,81 @@
 				transition: top 1s ease-out, background 1s linear;
 				z-index: 100;
 			}
+
+			/** Sidebar styling copied from https://jsfiddle.net/gableroux/S2SMK/ */
+			.group {
+			    background: yellow;
+			    width: 200px;
+			    height: 500px;
+			}
+			.group .subgroup {
+			    background: orange;
+			    width: 150px;
+			    height: 200px;
+			}
+			.fixed {
+			    position: fixed;
+			}
+
+			/* sidebar */
+			.bs-docs-sidebar {
+			    padding-left: 20px;
+			    margin-top: 20px;
+			    margin-bottom: 20px;
+			}
+
+			/* all links */
+			.bs-docs-sidebar .nav>li>a {
+			    color: #999;
+			    border-left: 2px solid transparent;
+			    padding: 4px 20px;
+			    font-size: 13px;
+			    font-weight: 400;
+			}
+
+			/* nested links */
+			.bs-docs-sidebar .nav .nav>li>a {
+			    padding-top: 1px;
+			    padding-bottom: 1px;
+			    padding-left: 30px;
+			    font-size: 12px;
+			}
+
+			/* active & hover links */
+			.bs-docs-sidebar .nav>.active>a, 
+			.bs-docs-sidebar .nav>li>a:hover, 
+			.bs-docs-sidebar .nav>li>a:focus {
+			    color: #563d7c;                 
+			    text-decoration: none;          
+			    background-color: transparent;  
+			    border-left-color: #563d7c; 
+			}
+			/* all active links */
+			.bs-docs-sidebar .nav>.active>a, 
+			.bs-docs-sidebar .nav>.active:hover>a,
+			.bs-docs-sidebar .nav>.active:focus>a {
+			    font-weight: 700;
+			}
+			/* nested active links */
+			.bs-docs-sidebar .nav .nav>.active>a, 
+			.bs-docs-sidebar .nav .nav>.active:hover>a,
+			.bs-docs-sidebar .nav .nav>.active:focus>a {
+			    font-weight: 500;
+			}
+
+			/* hide inactive nested list */
+			.bs-docs-sidebar .nav ul.nav {
+			    display: none;           
+			}
+			/* show active nested list */
+			.bs-docs-sidebar .nav>.active>ul.nav {
+			    display: block;           
+			}
 		</style>
 
 	</head>
 
-	<body>
+	<body data-spy="scroll" data-target=".bs-docs-sidebar" data-offset="40">
 		<main>
 			<nav>
 				<div id="skiptocontent">
@@ -103,10 +177,37 @@
 				</ul>
 			</nav>
 
+			<div class="bs-docs-sidebar navbar navbar-default">
+				<ul class="nav nav-stacked fixed">
+					<li>
+						<a href="#Invasion">Invasion</a>
+						<ul class="nav nav-stacked">
+							<li>
+								<a class="nav-link" href="#Invasion_1">Invasion 1</a>
+							</li>
+							<li>
+								<a class="nav-link" href="#Invasion_2">Invasion 2</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#Commando">Commando</a>
+						<ul class="nav nav-stacked">
+							<li>
+								<a class="nav-link" href="#Commando_1">Commando 1</a>
+							</li>
+							<li>
+								<a class="nav-link" href="#Commando_2">Commando 2</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
 			<section id="maincontent">
 				<h1>Games</h1>
-				<h2>Invasion</h2>
-				<h3><small>Invasion 1</small></h3>
+				<h2 id="Invasion">Invasion</h2>
+				<h3 id="Invasion_1"><small>Invasion 1</small></h3>
 				
 				<aside>
 					<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/Level20001.png" alt="Invasion 1">
@@ -129,7 +230,7 @@
 					</p>
 				</article>
 				
-				<h3><small>Invasion 2</small></h3>
+				<h3 id="Invasion_2"><small>Invasion 2</small></h3>
 				<aside>
 					<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/Level20002.png" alt="Invasion 2">
 				</aside>
@@ -151,7 +252,7 @@
 					</p>
 				</article>
 				
-				<h3><small>Invasion 3</small></h3>
+				<h3 id="Invasion_3"><small>Invasion 3</small></h3>
 				<aside>
 					<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/Level20003.png" alt="Invasion 3">
 				</aside>
@@ -173,7 +274,7 @@
 					</p>
 				</article>
 				
-				<h3><small>Invasion 4</small></h3>
+				<h3 id="Invasion_4"><small>Invasion 4</small></h3>
 				<aside>
 					<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/Level20004.png" alt="Invasion 4" id="I4icon">
 					<script>
@@ -208,7 +309,7 @@
 					</p>
 				</article>
 				
-				<h3><small>Invasion 5</small></h3>
+				<h3 id="Invasion_5"><small>Invasion 5</small></h3>
 				<aside>
 					<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/I5_2.png" alt="Invasion 5">
 				</aside>
@@ -218,8 +319,8 @@
 					</p>
 				</article>
 				
-				<h2>Commando</h2>
-				<h3><small>Commando 1</small></h3>
+				<h2 id="Commando">Commando</h2>
+				<h3 id="Commando_1"><small>Commando 1</small></h3>
 				<aside>
 					<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/Level30001.png" alt="Commando 1">
 				</aside>
@@ -238,7 +339,7 @@
 					</p>
 				</article>
 
-				<h3><small>Commando 2</small></h3>
+				<h3 id="Commando_2"><small>Commando 2</small></h3>
 				<aside>
 					<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/Level30002.png" alt="Commando 2">
 				</aside>
@@ -248,7 +349,7 @@
 					</p>
 				</article>
 
-				<h3><small>Commando 3</small></h3>
+				<h3 id="Commando_3"><small>Commando 3</small></h3>
 				<aside>
 					<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/Level30003.png" alt="Commando 3">
 				</aside>
