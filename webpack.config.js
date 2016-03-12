@@ -20,7 +20,8 @@ const webpackMinifyOptions = {
 }
 
 module.exports = {
-  devtool: isProd ? 'hidden-source-map' : 'cheap-eval-source-map',
+  // devtool: isProd ? 'hidden-source-map' : 'cheap-eval-source-map',
+  devtool: isProd ? 'hidden-source-map' : 'source-map',
   context: path.join(__dirname, './client'),
   entry: {
     // './about/index': './about/index',
@@ -157,6 +158,14 @@ module.exports = {
       //     name: '[name].[ext]'
       //   }
       // },
+      {
+          test: require.resolve("bootstrap/dist/js/umd/scrollspy"),
+          loader: "imports?define=>false"
+      },
+      {
+          test: require.resolve("bootstrap/dist/js/umd/util"),
+          loader: "imports?define=>false"
+      },
       {
         test: /\.css$/,
         loaders: [
