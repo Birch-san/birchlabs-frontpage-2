@@ -27,9 +27,9 @@ module.exports = {
     // './about/index': './about/index',
     // './art/index': './art/index',
     // './blog/index': './blog/index',
-    'experiments': './experiments/index',
-    'games': './games/index',
-    'common-style': './shared/common-style',
+    // 'experiments': './experiments/index',
+    // 'games': './games/index',
+    // 'common-style': './shared/common-style',
     // './music/index': './music/index',
     // './index/index': './index/index'
     'elevator-with-sidebar' : './lib/elevator-with-sidebar/index',
@@ -73,49 +73,44 @@ module.exports = {
       }
     ]),
     new HtmlWebpackPlugin({
-      chunks: ['common-style', 'experiments', 'defer-images', 'elevator-with-sidebar'],
+      chunks: ['defer-images', 'elevator-with-sidebar'],
       filename: 'experiments/index.html',
       template: 'experiments/index.html',
       inject: 'body',
       minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
-      chunks: ['common-style', 'games', 'defer-images', 'elevator-with-sidebar'],
+      chunks: ['defer-images', 'elevator-with-sidebar'],
       filename: 'games/index.html',
       template: 'games/index.html',
       inject: 'body',
       minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
-      chunks: ['common-style'],
       filename: 'art/index.html',
       template: 'art/index.html',
       inject: 'body',
       minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
-      chunks: ['common-style'],
       filename: 'about/index.html',
       template: 'about/index.html',
       inject: 'body',
       minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
-      chunks: ['common-style'],
       filename: 'blog/index.html',
       template: 'blog/index.html',
       inject: 'body',
       minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
-      chunks: ['common-style'],
       filename: 'music/index.html',
       template: 'music/index.html',
       inject: 'body',
       minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
-      chunks: ['common-style'],
       filename: 'index.html',
       template: 'index/index.html',
       inject: 'body',
