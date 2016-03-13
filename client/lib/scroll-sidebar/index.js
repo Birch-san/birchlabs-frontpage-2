@@ -5,12 +5,19 @@ $('.bs-docs-sidebar')
 .append('<ul class="nav nav-stacked fixed"/>')
 
 const sanitize = (str) => {
-	return str.replace(/\s+/g, '_').replace(/[^-A-Za-z0-9_:.]*/g, '');
+	return `AA${(str || '').replace(/\s+/g, '_').replace(/[^-A-Za-z0-9_:.]*/g, '')}`;
 }
 
 $('h2')
 .each((index, section) => {
-	const sectionName = section.innerText;
+	const sectionName = $(section)
+	.contents()
+	.filter(function() {
+	  return this.nodeType === 3; 
+	})
+	.get(0).nodeValue
+	.trim();
+
 	const sectionId = sanitize(sectionName);
 	$(section).attr("id", sectionId);
 
