@@ -1,3 +1,5 @@
+require("!style!css!./style.css");
+
 require('bootstrap/dist/js/umd/scrollspy');
 const $ = require('jquery');
 
