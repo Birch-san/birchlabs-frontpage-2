@@ -1,18 +1,17 @@
 require('bootstrap/dist/js/umd/scrollspy');
 const $ = require('jquery');
 
-$('body').scrollspy({
-    target: '.bs-docs-sidebar',
-    offset: 40
-});
-
 $('.bs-docs-sidebar')
 .append('<ul class="nav nav-stacked fixed"/>')
+
+const sanitize = (str) => {
+	return str.replace(/\s+/g, '_').replace(/[^-A-Za-z0-9_:.]*/g, '');
+}
 
 $('h2')
 .each((index, section) => {
 	const sectionName = section.innerText;
-	const sectionId = sectionName.replace(' ', '_');
+	const sectionId = sanitize(sectionName);
 	$(section).attr("id", sectionId);
 
 	$('.bs-docs-sidebar > ul')
@@ -29,7 +28,7 @@ $('h2')
 	.nextUntil('h2', 'h3')
 	.each((index, subSection) => {
 		const subSectionName = subSection.innerText;
-		const subSectionId = `${sectionId}_${subSectionName.replace(' ', '_')}`;
+		const subSectionId = `${sectionId}_${sanitize(subSectionName)}`;
 		$(subSection).attr("id", subSectionId);
 		
 		$(dropdownMenu).append(
@@ -39,6 +38,11 @@ $('h2')
 			`
 			);
 	});
+});
+
+$('body').scrollspy({
+    target: '.bs-docs-sidebar',
+    offset: 40
 });
 
 /*
