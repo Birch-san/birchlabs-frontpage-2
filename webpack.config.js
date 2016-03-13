@@ -21,16 +21,18 @@ const webpackMinifyOptions = {
 
 module.exports = {
   devtool: isProd ? 'hidden-source-map' : 'cheap-eval-source-map',
+  // devtool: isProd ? 'hidden-source-map' : 'source-map',
   context: path.join(__dirname, './client'),
   entry: {
     // './about/index': './about/index',
     // './art/index': './art/index',
     // './blog/index': './blog/index',
-    // './experiments/index': './experiments/index',
-    // 'games': './games/index',
+    'experiments': './experiments/index',
+    'games': './games/index',
+    'common-style': './shared/common-style',
     // './music/index': './music/index',
     // './index/index': './index/index'
-    'elevator' : './lib/elevator/index',
+    'elevator-with-sidebar' : './lib/elevator-with-sidebar/index',
     'defer-images' : './lib/defer-images/index'
   },
   output: {
@@ -38,9 +40,14 @@ module.exports = {
     filename: "[name].entry.js",
     chunkFilename: "[id].chunk.js"
   },
-  devtool: 'source-map',
+  // devtool: 'source-map',
   // devtool: 'eval',
   plugins: [
+    new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery",
+        "window.jQuery": "jquery"
+    }),
     new CopyWebpackPlugin([
       {
         from: 'lib/elevator/ding.mp3',
@@ -66,43 +73,49 @@ module.exports = {
       }
     ]),
     new HtmlWebpackPlugin({
-      chunks: ['elevator', 'defer-images'],
+      chunks: ['common-style', 'experiments', 'defer-images', 'elevator-with-sidebar'],
       filename: 'experiments/index.html',
       template: 'experiments/index.html',
-        minify: webpackMinifyOptions
+      inject: 'body',
+      minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
-      chunks: ['elevator', 'defer-images'],
+      chunks: ['common-style', 'games', 'defer-images', 'elevator-with-sidebar'],
       filename: 'games/index.html',
       template: 'games/index.html',
       inject: 'body',
       minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
+      chunks: ['common-style'],
       filename: 'art/index.html',
       template: 'art/index.html',
       inject: 'body',
       minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
+      chunks: ['common-style'],
       filename: 'about/index.html',
       template: 'about/index.html',
       inject: 'body',
       minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
+      chunks: ['common-style'],
       filename: 'blog/index.html',
       template: 'blog/index.html',
       inject: 'body',
       minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
+      chunks: ['common-style'],
       filename: 'music/index.html',
       template: 'music/index.html',
       inject: 'body',
       minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
+      chunks: ['common-style'],
       filename: 'index.html',
       template: 'index/index.html',
       inject: 'body',
@@ -131,7 +144,7 @@ module.exports = {
             }
         }
       },
-      sourceMap: false
+      sourceMap: !isProd
     }),
     // new webpack.optimize.DedupePlugin(),
     new webpack.DefinePlugin({
@@ -152,6 +165,14 @@ module.exports = {
       //     name: '[name].[ext]'
       //   }
       // },
+      {
+          test: require.resolve("bootstrap/dist/js/umd/scrollspy"),
+          loader: "imports?define=>false"
+      },
+      {
+          test: require.resolve("bootstrap/dist/js/umd/util"),
+          loader: "imports?define=>false"
+      },
       {
         test: /\.css$/,
         loaders: [

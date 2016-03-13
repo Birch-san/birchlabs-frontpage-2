@@ -4,7 +4,7 @@
   "description": "Attempt 2 to provide a simple plaintext sitemap on the frontpage of Birchlabs.co.uk",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/webpack-dev-server --port 8083 --history-api-fallback --progress --hot --inline --module-bind \"css=style\\!css\"",
+    "start": "./node_modules/.bin/webpack-dev-server --port 8083 --history-api-fallback --progress --inline --module-bind \"css=style\\!css\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node build.js production"
   },
@@ -26,8 +26,13 @@
     "css-loader": "^0.23.1",
     "file-loader": "^0.8.5",
     "html-webpack-plugin": "^2.9.0",
+    "imports-loader": "^0.6.5",
     "style-loader": "^0.13.0",
     "webpack": "^2.1.0-beta.4",
     "webpack-dev-server": "^2.0.0-beta"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.2",
+    "jquery": "^2.2.1"
   }
 }
