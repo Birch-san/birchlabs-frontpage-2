@@ -1,3 +1,5 @@
+require("!style!css!./style.css");
+
 var Elevator = require('./elevator.min');
 
 var elevator = new Elevator({
