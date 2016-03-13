@@ -16,9 +16,6 @@ trap "popd > /dev/null" EXIT SIGHUP SIGINT SIGTERM
 command -v security >/dev/null 2>&1 || { echo >&2 "I require Mac OS X 'security' CLI but it's not installed. Aborting."; exit 1; }
 command -v lftp >/dev/null 2>&1 || { echo >&2 "I require 'lftp' but it's not installed. Try 'brew install lftp'. Aborting."; exit 1; }
 
-# Build Production distribution
-npm run build
-
 HOST="ftp.birch-family.me.uk"
 USER=$(security find-internet-password -s "ftp.birch-family.me.uk" | grep -E "^    \"acct\"" | sed -E "s/.*=\"(.*)\"/\\1/")
 PASS=$(security find-internet-password -wa $USER)
