@@ -16,7 +16,63 @@ This will also give mobile users the ability to find their way to any non-Flash 
 
 ## Development
 
-For now I will be using [`Brackets.app`](http://brackets.io/) to edit the webpage live.
+### Pre-requisites
+
+You may as well update Node and `npm` to the very latest versions.
+
+Mac users who installed Node via Homebrew can update both of those [like so](http://stackoverflow.com/a/11298299/5257399):
+
+```bash
+brew update
+brew upgrade node
+npm install -g npm
+```
+
+You should globally install bleeding-edge versions of `webpack` and `webpack-dev-server`.
+
+```bash
+npm install -g webpack@^2.1.0-beta.4 webpack-dev-server@^2.0.0-beta
+```
+
+> Note: it's _possible_ that installing `webpack` and `webpack-dev-server` globally is *not* strictly necessary, as we `npm install` those anyway as dev dependencies, and we launch at least `webpack-dev-server` from the `node_modules` folder.
+
+### Acquiring code
+
+Clone this repository.
+
+```bash
+git clone https://github.com/Birch-san/birchlabs-frontpage-2.git
+```
+
+### Initial setup
+
+Install, including dev dependencies.
+
+```bash
+npm install
+```
+
+### Serve website locally for development
+
+This launches (on port 3000) a `webpack-dev-server`
+
+```bash
+npm start
+```
+
+The website is served on `http://localhost:3000/`.
+
+### Build compressed production bundle
+
+This uses Webpack, Babel, and UglifyJS to make a (relatively) small production distribution of the website.
+
+```bash
+npm run build
+```
+
+## Notes
+
+When designing the original layout: I used [`Brackets.app`](http://brackets.io/) to edit the webpage live.
 
 ### Page-load
 
