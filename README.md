@@ -54,13 +54,13 @@ npm install
 
 ### Serve website locally for development
 
-This launches (on port 3000) a `webpack-dev-server`
+This launches (on port 8083) a `webpack-dev-server`
 
 ```bash
 npm start
 ```
 
-The website is served on `http://localhost:3000/`.
+The website is served on `http://localhost:8083/`.
 
 ### Build compressed production bundle
 
