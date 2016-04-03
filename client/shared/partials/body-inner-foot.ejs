@@ -1,0 +1,8 @@
+<%
+for (var chunk in htmlWebpackPlugin.files.chunks) {
+	if (!chunk.startsWith("foot_")) {
+		continue;
+	}
+%>
+<script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+<% }%>

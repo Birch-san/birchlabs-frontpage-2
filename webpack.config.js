@@ -32,8 +32,8 @@ module.exports = {
     'head_common-style': './shared/common-style',
     // './music/index': './music/index',
     // './index/index': './index/index'
-    'elevator-with-sidebar' : './lib/elevator-with-sidebar/index',
-    'defer-images' : './lib/defer-images/index'
+    'foot_elevator-with-sidebar' : './lib/elevator-with-sidebar/index',
+    'foot_defer-images' : './lib/defer-images/index'
   },
   output: {
     path: path.join(__dirname, "dist"),
@@ -73,49 +73,49 @@ module.exports = {
       }
     ]),
     new HtmlWebpackPlugin({
-      chunks: ['defer-images', 'elevator-with-sidebar'],
+      chunks: ['head_common-style', 'foot_defer-images', 'foot_elevator-with-sidebar'],
       filename: 'experiments/index.html',
-      template: 'experiments/index.html',
-      inject: 'body',
+      template: 'experiments/index.ejs',
+      inject: false,
       minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
-      chunks: ['defer-images', 'elevator-with-sidebar'],
+      chunks: ['head_common-style', 'foot_defer-images', 'foot_elevator-with-sidebar'],
       filename: 'games/index.html',
-      template: 'games/index.html',
-      inject: 'body',
+      template: 'games/index.ejs',
+      inject: false,
       minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
-      chunks: ["head_common-style"],
+      chunks: ['head_common-style'],
       filename: 'art/index.html',
       template: 'art/index.ejs',
       inject: false,
       minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
-      chunks: ["head_common-style"],
+      chunks: ['head_common-style'],
       filename: 'about/index.html',
       template: 'about/index.ejs',
       inject: false,
       minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
-      chunks: ["head_common-style"],
+      chunks: ['head_common-style'],
       filename: 'blog/index.html',
       template: 'blog/index.ejs',
       inject: false,
       minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
-      chunks: ["head_common-style"],
+      chunks: ['head_common-style'],
       filename: 'music/index.html',
       template: 'music/index.ejs',
       inject: false,
       minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
-      chunks: ["head_common-style"],
+      chunks: ['head_common-style'],
       filename: 'index.html',
       template: 'index/index.ejs',
       inject: false,
