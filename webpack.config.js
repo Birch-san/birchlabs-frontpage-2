@@ -87,31 +87,31 @@ module.exports = {
       minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
-      chunks: [],
+      chunks: ["head_common-style"],
       filename: 'art/index.html',
-      template: 'art/index.html',
-      inject: 'body',
+      template: 'art/index.ejs',
+      inject: false,
       minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
-      chunks: [],
+      chunks: ["head_common-style"],
       filename: 'about/index.html',
-      template: 'about/index.html',
-      inject: 'body',
+      template: 'about/index.ejs',
+      inject: false,
       minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
-      chunks: [],
+      chunks: ["head_common-style"],
       filename: 'blog/index.html',
-      template: 'blog/index.html',
-      inject: 'body',
+      template: 'blog/index.ejs',
+      inject: false,
       minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
-      chunks: [],
+      chunks: ["head_common-style"],
       filename: 'music/index.html',
-      template: 'music/index.html',
-      inject: 'body',
+      template: 'music/index.ejs',
+      inject: false,
       minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
