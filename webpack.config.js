@@ -117,7 +117,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       chunks: [],
       filename: 'index.html',
-      template: 'index/index.html',
+      template: 'index/index.ejs',
       inject: 'body',
       minify: webpackMinifyOptions
     }),
@@ -179,6 +179,13 @@ module.exports = {
           'style',
           'css'
         ]
+      },
+      {
+        test: /\.ejs$/,
+        loader: "underscore-template-loader",
+        query: {
+            withImports: true,
+        }
       },
       {
         test: /\.jsx?$/,
