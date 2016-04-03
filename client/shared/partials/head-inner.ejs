@@ -8,6 +8,11 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/marx/1.3.0/marx.min.css">
 <title><%= htmlWebpackPlugin.options.title || 'Welcome to Birchlabs.co.uk'%></title>
-<% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+<%
+for (var chunk in htmlWebpackPlugin.files.chunks) {
+	if (!chunk.startsWith("head_")) {
+		continue;
+	}
+%>
 <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
-<% } %>
+<% }%>

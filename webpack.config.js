@@ -29,7 +29,7 @@ module.exports = {
     // './blog/index': './blog/index',
     // 'experiments': './experiments/index',
     // 'games': './games/index',
-    // 'common-style': './shared/common-style',
+    'head_common-style': './shared/common-style',
     // './music/index': './music/index',
     // './index/index': './index/index'
     'elevator-with-sidebar' : './lib/elevator-with-sidebar/index',
@@ -115,10 +115,10 @@ module.exports = {
       minify: webpackMinifyOptions
     }),
     new HtmlWebpackPlugin({
-      chunks: [],
+      chunks: ["head_common-style"],
       filename: 'index.html',
       template: 'index/index.ejs',
-      inject: 'body',
+      inject: false,
       minify: webpackMinifyOptions
     }),
     // new webpack.optimize.CommonsChunkPlugin({
@@ -182,10 +182,7 @@ module.exports = {
       },
       {
         test: /\.ejs$/,
-        loader: "underscore-template-loader",
-        query: {
-            withImports: true,
-        }
+        loader: "underscore-template-loader"
       },
       {
         test: /\.jsx?$/,

@@ -1,3 +1,50 @@
-@require('../shared/partials/preamble.ejs')
-<p>sup</p>
-@require('../shared/partials/postamble.ejs')
+@require('../shared/partials/head-pre.ejs')
+@require('../shared/partials/head-inner.ejs')
+@require('../shared/partials/head-post.ejs')
+@require('../shared/partials/body-inner.ejs')
+<main>
+	<nav>
+		<div id="skiptocontent">
+			<!-- Skiplink copied from http://webaim.org/ -->
+			<a href="#maincontent">Skip to main content</a>
+		</div>
+		<ul>
+			<li><b>Home</b></li>
+			<li><a href="games/index.html">Games</a></li>
+			<li><a href="art/index.html">Art</a></li>
+			<li><a href="experiments/index.html">Experiments</a></li>
+			<li><a href="blog/index.html">Blog</a></li>
+			<li><a href="music/index.html">Music</a></li>
+			<li><a href="about/index.html">About</a></li>
+		</ul>
+	</nav>
+
+	<section id="maincontent">
+		<h1>Birchlabs.co.uk</h1>
+		<h2><small>Purpose</small></h2>
+		<p>Birchlabs presents the hobby projects of Alex and Jamie Birch.</p>
+		<p>Mostly these include the Flash games that we built during our childhood.
+		We also make:</p>
+		<ul>
+			<li>Drawings</li>
+			<li>Tech experiments</li>
+			<li>Blog posts</li>
+			<li>Music</li>
+		</ul>
+		<h2><small>Original website</small></h2>
+		<p>The original <a href="index_flash.html">snazzy Flash website</a> still exists.</p>
+		<p>We have switched the front page to plain-text, because:</p>
+		<ul>
+			<li>This plain webpage is more useful to mobile devices</li>
+			<li>Content can be found better by search engines</li>
+			<li>Flash is dead 😞</li>
+		</ul>
+		<p><a href="https://github.com/Birch-san/birchlabs-frontpage-2">Follow the development</a> of this surprisingly interesting frontpage.</p>
+	</section>
+
+	<footer>
+		<p>&copy; Alex Birch &amp; Jamie Birch 2016</p>
+		<p>Styling: <a href="https://github.com/mblode/marx">Matthew Blode's Marx CSS</a></p>
+	</footer>
+</main>
+@require('../shared/partials/body-post.ejs')
