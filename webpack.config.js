@@ -62,6 +62,12 @@ module.exports = {
     ]),
     new CopyWebpackPlugin([
       {
+        from: 'shared/marx.min.css',
+        to: 'shared/marx.min.css'
+      }
+    ]),
+    new CopyWebpackPlugin([
+      {
         from: 'experiments/img',
         to: 'experiments/img'
       }
